@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="enejApp">
+	<form name="cadastroForm" ng-controller="FormController as form">
+		<input type="text" ng-model="form.user.cpf">
+		<input type="password" ng-model="form.user.password">
+		<button ng-click="form.enviarForm()">Enviar</button>
+		<pre>{{ form.user | json }}</pre>
+	</form>
+
+	<script type="text/javascript">
+		angular.module('enejApp', [])
+		.controller('FormController', function() 
+		{
+			this.user = {};
+			this.user.cpf = "123.123.123-12";
+			this.user.password = '';
+			this.enviarForm = function()
+			{
+				console.log(this.user);
+			}
+		});
+	</script>
+
+</body>
+</html>
