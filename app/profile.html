@@ -13,6 +13,13 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <style type="text/css">
+    .error
+    {
+      color: red;
+    }
+  </style>
 </head>
 <body ng-app="enejApp">
   <h1>Formulário de cadastro</h1>
@@ -20,6 +27,7 @@
     <form name="profileForm" ng-submit="profileForm.$valid && profile.enviarForm()">
       <label>Nome de usuário</label>
       <input type="text" name="nomeUsuario" ng-model="profile.user.nomeUsuario" required><br>
+      <div ng-show="profile.user.submitted && profileForm.nomeUsuario.$error.required">Required</div><br>
       <label>Email</label>
       <input type="email" name="email" ng-model="profile.user.email" required><br>
       <label>Senha</label>
@@ -83,7 +91,9 @@
       <input type="radio" name="alergia" value="nao" ng-model="profile.user.alergia" required>Não
       <input type="radio" name="alergia" value="sim" ng-model="profile.user.alergia" required>Sim<br>
 
-      <input type="submit" value="Enviar">
+      <input type="submit" value="Enviar" ng-click="profile.user.submitted = true">
+      {{ profile.user.submitted }}
+
     </form>
   </div>
 

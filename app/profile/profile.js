@@ -30,6 +30,7 @@ enejApp.controller("profileController", function()
 	this.user.necessidades;
 	this.user.dieta;
 	this.user.alergia;
+	this.user.submitted = false;
 
 	this.enviarForm = function()
 	{
