@@ -15,7 +15,7 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
   <style type="text/css">
-    .error
+    .error-msg
     {
       color: red;
     }
@@ -24,72 +24,128 @@
 <body ng-app="enejApp">
   <h1>Formulário de cadastro</h1>
   <div ng-controller="profileController as profile">
-    <form name="profileForm" ng-submit="profileForm.$valid && profile.enviarForm()">
+    <form name="profileForm" ng-submit="profileForm.$valid && profile.enviarForm()" novalidate>
       <label>Nome de usuário</label>
       <input type="text" name="nomeUsuario" ng-model="profile.user.nomeUsuario" required><br>
-      <div ng-show="profile.user.submitted && profileForm.nomeUsuario.$error.required">Required</div><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.nomeUsuario.$error.required">Informe um nome de usuário</div>
+      
       <label>Email</label>
       <input type="email" name="email" ng-model="profile.user.email" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.email.$error.required">Informe um email</div>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.email.$error.email">Informe um email válido</div>
+      
       <label>Senha</label>
       <input type="password" name="senha" ng-model="profile.user.senha" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.senha.$error.required">Informe uma senha</div>
+      
       <label>Nome</label>
       <input type="text" name="nome" ng-model="profile.user.nome" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.nome.$error.required">Informe um nome</div>
+      
       <label>Sobrenome</label>
       <input type="text" name="sobrenome" ng-model="profile.user.sobrenome" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.sobrenome.$error.required">Informe um sobrenome</div>
+      
       <label>Nome do crachá</label>
       <input type="text" name="nomeCracha" ng-model="profile.user.nomeCracha" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.nomeCracha.$error.required">Informe o nome do crachá</div>
+      
       <label>CPF</label>
       <input type="number" name="cpf" ng-model="profile.user.cpf" required ng-minlength="11" ng-maxlength="11"><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cpf.$error.required">Informe o CPF</div>
+      
       <label>RG</label>
       <input type="number" name="rg" ng-model="profile.user.rg" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.rg.$error.required">Informe seu RG</div>
+      
       <label>Sexo</label>
        <select ng-model="profile.user.sexo" required>
         <option name="sexo" value="masculino">Masculino</option>
         <option name="sexo" value="feminino">Feminino</option>
       </select><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.sexo.$error.required">Informe um sexo</div>
+      
       <label>CEP</label>
       <input type="number" name="cep" ng-model="profile.user.cep" required><br> 
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cep.$error.required">Informe um CEP</div>
+      
       <label>País</label>
       <input type="text" name="pais" ng-model="profile.user.pais" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.pais.$error.required">Informe um pais</div>
+      
       <label>Estado</label>
       <input type="text" name="estado" ng-model="profile.user.estado" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.estado.$error.required">Informe um estado</div>
+      
       <label>Cidade</label>
       <input type="text" name="cidade" ng-model="profile.user.cidade" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cidade.$error.required">Informe uma cidade</div>
+      
       <label>Bairro</label>
       <input type="text" name="bairro" ng-model="profile.user.bairro" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.bairro.$error.required">Informe um bairro</div>
+      
       <label>Endereço</label>
       <textarea name="endereco" ng-model="profile.user.endereco" required></textarea><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.endereco.$error.required">Informe um endereço</div>
+      
       <label>Número</label>
       <input type="number" name="numero" ng-model="profile.user.numero" ng-minlength="1"><br>
+      
       <label>Complemento</label>
       <textarea name="complemento" ng-model="profile.user.complemento" required></textarea><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.complemento.$error.required">Informe um complemento</div>
+      
       <label>Data de nascimento</label>
       <input type="text" name="nascimento" ng-model="profile.user.nascimento" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.nascimento.$error.required">Informe uma data de nascimento</div>
+      
       <label>Universidade</label>
       <input type="text" name="universidade" ng-model="profile.user.universidade" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.universidade.$error.required">Informe uma universidade</div>
+      
       <label>Curso</label>
       <input type="text" name="curso" ng-model="profile.user.curso" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.curso.$error.required">Informe um curso</div>
+      
       <label>Período</label>
       <input type="text" name="periodo" ng-model="profile.user.periodo" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.periodo.$error.required">Informe um período</div>
+      
       <label>Federação</label>
       <input type="text" name="federacao" ng-model="profile.user.federacao" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.federacao.$error.required">Informe uma federação</div>
+      
       <label>Empresa Júnior</label>
       <input type="text" name="ej" ng-model="profile.user.ej" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.ej.$error.required">Informe uma EJ</div>
+      
       <label>Cargo na Empresa Júnior</label>
       <input type="text" name="cargo" ng-model="profile.user.cargo" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cargo.$error.required">Informe um cargo</div>
+      
       <label>Tamanho da camisa</label>
       <input type="text" name="camisa" ng-model="profile.user.camisa" required><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.camisa.$error.required">Informe um tamanho de camisa</div>
+      
       <label>Tem necessidades especiais?</label>
       <input type="radio" name="pne" value="nao" ng-model="profile.user.pne" required>Não
       <input type="radio" name="pne" value="sim" ng-model="profile.user.pne" required>Sim<br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.pne.$error.required">Informe se possui necessidades especiais</div>
+      
       <label>Qual?</label>
       <textarea name="necessidades" ng-model="profile.user.necessidades" required></textarea><br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.necessidades.$error.required">Informe quais necessidades especiais você possui</div>
+      
       <label>Dieta especial?</label>
       <input type="radio" name="dieta" value="nao" ng-model="profile.user.dieta" required>Não
       <input type="radio" name="dieta" value="sim" ng-model="profile.user.dieta" required>Sim<br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.dieta.$error.required">Informe se possui dieta especial</div>
+      
       <label>Intolerância ou alergia?</label>
       <input type="radio" name="alergia" value="nao" ng-model="profile.user.alergia" required>Não
       <input type="radio" name="alergia" value="sim" ng-model="profile.user.alergia" required>Sim<br>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.alergia.$error.required">Informe se possui intolerância ou alergia</div>
 
       <input type="submit" value="Enviar" ng-click="profile.user.submitted = true">
       {{ profile.user.submitted }}
