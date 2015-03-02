@@ -17,71 +17,71 @@
 <body ng-app="enejApp">
   <h1>Formulário de cadastro</h1>
   <div ng-controller="profileController as profile">
-    <form name="profileForm" ng-submit="profile.enviarForm()">
+    <form name="profileForm" ng-submit="profileForm.$valid && profile.enviarForm()">
       <label>Nome de usuário</label>
-      <input type="text" name="nomeUsuario" ng-model="profile.user.nomeUsuario"><br>
+      <input type="text" name="nomeUsuario" ng-model="profile.user.nomeUsuario" required><br>
       <label>Email</label>
-      <input type="email" name="email" ng-model="profile.user.email"><br>
+      <input type="email" name="email" ng-model="profile.user.email" required><br>
       <label>Senha</label>
-      <input type="password" name="senha" ng-model="profile.user.senha"><br>
+      <input type="password" name="senha" ng-model="profile.user.senha" required><br>
       <label>Nome</label>
-      <input type="text" name="nome" ng-model="profile.user.nome"><br>
+      <input type="text" name="nome" ng-model="profile.user.nome" required><br>
       <label>Sobrenome</label>
-      <input type="text" name="sobrenome" ng-model="profile.user.sobrenome"><br>
+      <input type="text" name="sobrenome" ng-model="profile.user.sobrenome" required><br>
       <label>Nome do crachá</label>
-      <input type="text" name="nomeCracha" ng-model="profile.user.nomeCracha"><br>
+      <input type="text" name="nomeCracha" ng-model="profile.user.nomeCracha" required><br>
       <label>CPF</label>
-      <input type="text" name="cpf" ng-model="profile.user.cpf"><br>
+      <input type="number" name="cpf" ng-model="profile.user.cpf" required ng-minlength="11" ng-maxlength="11"><br>
       <label>RG</label>
-      <input type="text" name="rg" ng-model="profile.user.rg"><br>
+      <input type="number" name="rg" ng-model="profile.user.rg" required><br>
       <label>Sexo</label>
-       <select ng-model="profile.user.sexo">
+       <select ng-model="profile.user.sexo" required>
         <option name="sexo" value="masculino">Masculino</option>
         <option name="sexo" value="feminino">Feminino</option>
       </select><br>
       <label>CEP</label>
-      <input type="text" name="cep" ng-model="profile.user.cep"><br> 
+      <input type="number" name="cep" ng-model="profile.user.cep" required><br> 
       <label>País</label>
-      <input type="text" name="pais" ng-model="profile.user.pais"><br>
+      <input type="text" name="pais" ng-model="profile.user.pais" required><br>
       <label>Estado</label>
-      <input type="text" name="estado" ng-model="profile.user.estado"><br>
+      <input type="text" name="estado" ng-model="profile.user.estado" required><br>
       <label>Cidade</label>
-      <input type="text" name="cidade" ng-model="profile.user.cidade"><br>
+      <input type="text" name="cidade" ng-model="profile.user.cidade" required><br>
       <label>Bairro</label>
-      <input type="text" name="bairro" ng-model="profile.user.bairro"><br>
+      <input type="text" name="bairro" ng-model="profile.user.bairro" required><br>
       <label>Endereço</label>
-      <textarea name="endereco" ng-model="profile.user.endereco"></textarea><br>
+      <textarea name="endereco" ng-model="profile.user.endereco" required></textarea><br>
       <label>Número</label>
-      <input type="text" name="numero" ng-model="profile.user.numero"><br>
+      <input type="number" name="numero" ng-model="profile.user.numero" ng-minlength="1"><br>
       <label>Complemento</label>
-      <textarea name="complemento" ng-model="profile.user.complemento"></textarea><br>
+      <textarea name="complemento" ng-model="profile.user.complemento" required></textarea><br>
       <label>Data de nascimento</label>
-      <input type="text" name="nascimento" ng-model="profile.user.nascimento"><br>
+      <input type="text" name="nascimento" ng-model="profile.user.nascimento" required><br>
       <label>Universidade</label>
-      <input type="text" name="universidade" ng-model="profile.user.universidade"><br>
+      <input type="text" name="universidade" ng-model="profile.user.universidade" required><br>
       <label>Curso</label>
-      <input type="text" name="curso" ng-model="profile.user.curso"><br>
+      <input type="text" name="curso" ng-model="profile.user.curso" required><br>
       <label>Período</label>
-      <input type="text" name="periodo" ng-model="profile.user.periodo"><br>
+      <input type="text" name="periodo" ng-model="profile.user.periodo" required><br>
       <label>Federação</label>
-      <input type="text" name="federacao" ng-model="profile.user.federacao"><br>
+      <input type="text" name="federacao" ng-model="profile.user.federacao" required><br>
       <label>Empresa Júnior</label>
-      <input type="text" name="ej" ng-model="profile.user.ej"><br>
+      <input type="text" name="ej" ng-model="profile.user.ej" required><br>
       <label>Cargo na Empresa Júnior</label>
-      <input type="text" name="cargo" ng-model="profile.user.cargo"><br>
+      <input type="text" name="cargo" ng-model="profile.user.cargo" required><br>
       <label>Tamanho da camisa</label>
-      <input type="text" name="camisa" ng-model="profile.user.camisa"><br>
+      <input type="text" name="camisa" ng-model="profile.user.camisa" required><br>
       <label>Tem necessidades especiais?</label>
-      <input type="radio" name="pne" value="nao" ng-model="profile.user.pne">Não
-      <input type="radio" name="pne" value="sim" ng-model="profile.user.pne">Sim<br>
+      <input type="radio" name="pne" value="nao" ng-model="profile.user.pne" required>Não
+      <input type="radio" name="pne" value="sim" ng-model="profile.user.pne" required>Sim<br>
       <label>Qual?</label>
-      <textarea name="necessidades" ng-model="profile.user.necessidades"></textarea><br>
+      <textarea name="necessidades" ng-model="profile.user.necessidades" required></textarea><br>
       <label>Dieta especial?</label>
-      <input type="radio" name="dieta" value="nao" ng-model="profile.user.dieta">Não
-      <input type="radio" name="dieta" value="sim" ng-model="profile.user.dieta">Sim<br>
+      <input type="radio" name="dieta" value="nao" ng-model="profile.user.dieta" required>Não
+      <input type="radio" name="dieta" value="sim" ng-model="profile.user.dieta" required>Sim<br>
       <label>Intolerância ou alergia?</label>
-      <input type="radio" name="alergia" value="nao" ng-model="profile.user.alergia">Não
-      <input type="radio" name="alergia" value="sim" ng-model="profile.user.alergia">Sim<br>
+      <input type="radio" name="alergia" value="nao" ng-model="profile.user.alergia" required>Não
+      <input type="radio" name="alergia" value="sim" ng-model="profile.user.alergia" required>Sim<br>
 
       <input type="submit" value="Enviar">
     </form>
