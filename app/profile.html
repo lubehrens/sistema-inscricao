@@ -56,7 +56,8 @@
       
       <label>RG</label>
       <input type="number" name="rg" ng-model="profile.user.rg" required><br>
-      <div class="error-msg" ng-show="profile.user.submitted && profileForm.rg.$error.required">Informe seu RG</div>
+      <div class="error-msg" ng-show="profile.user.submitted && (profileForm.rg.$error.required || profileForm.rg.$error.number)">Informe um RG válido</div>
+
       
       <label>Sexo</label>
        <select ng-model="profile.user.sexo" required>
@@ -67,7 +68,7 @@
       
       <label>CEP</label>
       <input type="number" name="cep" ng-model="profile.user.cep" required><br> 
-      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cep.$error.required">Informe um CEP</div>
+      <div class="error-msg" ng-show="profile.user.submitted && (profileForm.cep.$error.required || profileForm.cep.$error.number)">Informe um CEP válido</div>
       
       <label>País</label>
       <input type="text" name="pais" ng-model="profile.user.pais" required><br>
@@ -148,7 +149,7 @@
       <div class="error-msg" ng-show="profile.user.submitted && profileForm.alergia.$error.required">Informe se possui intolerância ou alergia</div>
 
       <input type="submit" value="Enviar" ng-click="profile.user.submitted = true">
-      {{ profile.user.submitted }}
+      {{ profileForm.$valid }}
 
     </form>
   </div>
