@@ -19,6 +19,17 @@
     {
       color: red;
     }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+    input[type=number] {-moz-appearance: textfield;}
+
   </style>
 </head>
 <body ng-app="enejApp">
@@ -52,7 +63,8 @@
       
       <label>CPF</label>
       <input type="number" name="cpf" ng-model="profile.user.cpf" required ng-minlength="11" ng-maxlength="11"><br>
-      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cpf.$error.required">Informe o CPF</div>
+      <div class="error-msg" ng-show="profile.user.submitted && profileForm.cpf.$error.required">Informe o CPF (apenas números)</div>
+      <div class="error-msg" ng-show="profile.user.submitted && (profileForm.cpf.$error.minlength || profileForm.cpf.$error.maxlength)">Informe um CPF válido</div>
       
       <label>RG</label>
       <input type="number" name="rg" ng-model="profile.user.rg" required><br>
@@ -60,7 +72,7 @@
 
       
       <label>Sexo</label>
-       <select ng-model="profile.user.sexo" required>
+       <select ng-model="profile.user.sexo" name="sexo" required>
         <option name="sexo" value="masculino">Masculino</option>
         <option name="sexo" value="feminino">Feminino</option>
       </select><br>
@@ -150,7 +162,6 @@
       <div class="error-msg" ng-show="profile.user.submitted && profileForm.alergia.$error.required">Informe se possui intolerância ou alergia</div>
 
       <input type="submit" value="Enviar" ng-click="profile.user.submitted = true">
-      {{ profileForm.$valid }}
 
     </form>
   </div>
