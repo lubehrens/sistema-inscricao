@@ -91,7 +91,8 @@
       <div class="error-msg" ng-show="profile.user.submitted && profileForm.endereco.$error.required">Informe um endereço</div>
       
       <label>Número</label>
-      <input type="number" name="numero" ng-model="profile.user.numero" ng-minlength="1"><br>
+      <input type="number" name="numero" ng-model="profile.user.numero" required><br>
+       <div class="error-msg" ng-show="profile.user.submitted && profileForm.numero.$error.number">Informe um número válido</div>
       
       <label>Complemento</label>
       <textarea name="complemento" ng-model="profile.user.complemento" required></textarea><br>
