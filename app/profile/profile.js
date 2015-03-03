@@ -1,4 +1,6 @@
-enejApp.controller("profileController", function()
+angular.module('enejApp')
+
+.controller("profileController", function()
 {
 	this.user = {};
 	this.user.nomeUsuario;
