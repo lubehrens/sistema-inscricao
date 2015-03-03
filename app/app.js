@@ -12,4 +12,8 @@ config(['$routeProvider', function($routeProvider) {
 }]);*/
 
 
-var enejApp = angular.module('enejApp', []);
+angular.module('enejApp', ['ngRoute'])
+
+.config(function($routeProvider) {
+	$routeProvider.otherwise({redirectTo: '/registration'});
+});

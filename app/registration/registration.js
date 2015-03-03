@@ -1,12 +1,26 @@
-enejApp.controller("registrationController", function()
+angular.module('enejApp')
+
+.config(function($routeProvider) {
+	$routeProvider.when('/registration', {
+		templateUrl: 'registration/registration.html',
+		controller: 'registrationController'
+	})
+	.when('/registration-success', {
+		templateUrl: 'registration/success.html',
+		controller: 'registrationController'
+	});
+})
+
+.controller("registrationController", function($location)
 {
 	this.user = {};
-	this.user.nome = 'Matheus';
-	this.user.email = "dkdkd@gmail.com";
-	this.user.cpf = "111.222.333.-44";
+	this.user.nome;
+	this.user.email;
+	this.user.cpf;
 
 	this.enviarForm = function()
 	{
-		myFirebaseRef.set(this.user);
+		//myFirebaseRef.set(this.user);
+		$location.path('registration-success');
 	}
 });

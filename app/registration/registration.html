@@ -1,0 +1,15 @@
+  <h1>Formulário de cadastro</h1>
+  <div ng-controller="registrationController as registration">
+    <form name="registrationForm" ng-submit="registrationForm.$valid && registration.enviarForm()" novalidate>
+      <label>Nome</label>
+      <input type="text" name="nome" ng-model="registration.user.nome" required><br>
+      <div ng-show="registrationForm.nome.$error.required">Por favor, informe seu nome!</div>
+      <label>Email</label>
+      <input type="email" name="email" ng-model="registration.user.email" required><br>
+      <div ng-show="registrationForm.email.$error.email">Por favor, informe um email correto!</div>
+      <div ng-show="registrationForm.email.$error.required">Por favor, informe um email!</div>
+      <label>CPF</label>
+      <input type="text" name="cpf" ng-model="registration.user.cpf" required mask="000.000.000-00"><br>
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
