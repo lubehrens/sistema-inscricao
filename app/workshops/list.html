@@ -1,0 +1,27 @@
+<a href="#/workshops/add" class="btn btn-primary">Adicionar</a>
+
+<div>
+	<input type="text" ng-model="busca">
+</div>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Professor</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(key, workshop) in ctrl.workshops | filter:busca">
+			<td>{{ workshop.nome }}</td>
+			<td>{{ workshop.professor }}</td>
+			<td>
+				<button ng-click="ctrl.removerWorkshop(key)" class="btn btn-danger">Remover</button>
+				<a href="#/workshops/edit/{{ key }}" class="btn btn-success">Editar</a>
+			</td>
+
+		</tr>
+	</tbody>
+</table>

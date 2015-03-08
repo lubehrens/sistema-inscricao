@@ -3,7 +3,8 @@ angular.module('enejApp')
 .config(function($routeProvider) {
 	$routeProvider.when('/registration', {
 		templateUrl: 'registration/registration.html',
-		controller: 'registrationController'
+		controller: 'registrationController',
+		controllerAs: 'registration'
 	})
 	.when('/registration-success', {
 		templateUrl: 'registration/success.html',

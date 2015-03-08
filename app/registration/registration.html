@@ -1,5 +1,5 @@
   <h1>Formulário de cadastro</h1>
-  <div ng-controller="registrationController as registration">
+  <!--<div ng-controller="registrationController as registration">-->
     <form name="registrationForm" ng-submit="registrationForm.$valid && registration.enviarForm()" novalidate>
       <label>Nome</label>
       <input type="text" name="nome" ng-model="registration.user.nome" required><br>
@@ -12,4 +12,4 @@
       <input type="text" name="cpf" ng-model="registration.user.cpf" required mask="000.000.000-00"><br>
       <input type="submit" value="Enviar">
     </form>
-  </div>
+  <!--</div>-->

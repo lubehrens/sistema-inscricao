@@ -1,0 +1,12 @@
+<form ng-submit="ctrl.sendForm()">
+	<div class="form-group">
+		<label for="nome">Nome</label>
+		<input type="text" class="form-control" name="nome" value="" id="nome" ng-model="ctrl.workshop.nome"></input>
+	</div>
+
+	<div class="form-group">
+		<label for="professor">Professor</label>
+		<input type="text" class="form-control" name="professor" value="" id="professor" ng-model="ctrl.workshop.professor"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Adicionar</button>
+</form>

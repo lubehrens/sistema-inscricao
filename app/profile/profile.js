@@ -33,7 +33,7 @@ angular.module('enejApp')
 	this.user.dieta;
 	this.user.alergia;
 	this.user.submitted = false;
-	
+
 	this.enviarForm = function()
 	{
 		myFirebaseRef.set(this.user);
