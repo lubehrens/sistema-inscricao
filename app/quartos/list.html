@@ -4,7 +4,6 @@
 	<input type="text" ng-model="busca">
 </div>
 
-
 <table>
 	<thead>
 		<tr>
@@ -16,7 +15,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="(key, quarto) in ctrl.quartos | filter:busca">
-			<td>{{ quarto.hotel_id }}</td>
+			<td>{{ quarto.hotel_id.nome }}</td>
 			<td>{{ quarto.nome }}</td>
 			<td>{{ quarto.vagas_total }}</td>
 			<td>

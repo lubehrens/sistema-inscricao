@@ -36,6 +36,11 @@ angular.module('enejApp')
 	var self = this;
 
 	self.quarto = {};
+	self.hoteis = {};
+
+	$http.get('https://amber-fire-952.firebaseio.com/hoteis/.json').success(function(data) {
+		self.hoteis = data;
+	});
 
 	if($routeParams.id) {
 		$http.get('https://amber-fire-952.firebaseio.com/quartos/'+$routeParams.id+'.json').success(function(data) {

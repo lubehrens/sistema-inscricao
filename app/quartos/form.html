@@ -1,7 +1,10 @@
 <form ng-submit="ctrl.sendForm()" novalidate>
 	<div class="form-group">
 		<label for="nome">Hotel</label>
-		<input type="text" class="form-control" name="hotel_id" value="" id="hotel_id" ng-model="ctrl.quarto.hotel_id" required></input>
+		<!--<input type="text" class="form-control" name="hotel_id" value="" id="hotel_id" ng-model="ctrl.quarto.hotel_id" required></input>-->
+		<select class="form-control" ng-model="ctrl.quarto.hotel_id" name="hotel_id" id="hotel_id" ng-options="hotel.nome for hotel in ctrl.hoteis" required>
+        	<option></option>
+      	</select>
 	</div>
 
 	<div class="form-group">
