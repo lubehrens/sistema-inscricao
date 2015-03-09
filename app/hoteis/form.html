@@ -1,0 +1,22 @@
+<form ng-submit="ctrl.sendForm()" novalidate>
+	<div class="form-group">
+		<label for="nome">Nome</label>
+		<input type="text" class="form-control" name="nome" value="" id="nome" ng-model="ctrl.hotel.nome" required></input>
+	</div>
+
+	<div class="form-group">
+		<label for="responsavel">Responsável</label>
+		<input type="text" class="form-control" name="responsavel" value="" id="responsavel" ng-model="ctrl.hotel.responsavel" required></input>
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" class="form-control" name="email" value="" id="email" ng-model="ctrl.hotel.email"></input>
+	</div>
+
+	<div class="form-group">
+		<label for="telefone">Telefone</label>
+		<input type="text" class="form-control" name="telefone" value="" id="telefone" ng-model="ctrl.hotel.telefone" required mask="(00)0000-0000"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</form>

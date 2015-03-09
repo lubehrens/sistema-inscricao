@@ -1,0 +1,31 @@
+<a href="#/hoteis/add" class="btn btn-primary">Adicionar hotel</a>
+
+<div>
+	<input type="text" ng-model="busca">
+</div>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Responsável</th>
+			<th>Email</th>
+			<th>Telefone</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(key, hotel) in ctrl.hoteis | filter:busca">
+			<td>{{ hotel.nome }}</td>
+			<td>{{ hotel.responsavel }}</td>
+			<td>{{ hotel.email }}</td>
+			<td>{{ hotel.telefone }}</td>
+			<td>
+				<button ng-click="ctrl.removerHotel(key)" class="btn btn-danger">Remover</button>
+				<a href="#/hoteis/edit/{{ key }}" class="btn btn-success">Editar</a>
+			</td>
+
+		</tr>
+	</tbody>
+</table>
