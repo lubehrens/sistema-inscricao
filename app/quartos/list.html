@@ -1,0 +1,29 @@
+<a href="#/quartos/add" class="btn btn-primary">Adicionar quarto</a>
+
+<div>
+	<input type="text" ng-model="busca">
+</div>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Hotel</th>
+			<th>Nome</th>
+			<th>Total de vagas</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(key, quarto) in ctrl.quartos | filter:busca">
+			<td>{{ quarto.hotel_id }}</td>
+			<td>{{ quarto.nome }}</td>
+			<td>{{ quarto.vagas_total }}</td>
+			<td>
+				<button ng-click="ctrl.removerQuarto(key)" class="btn btn-danger">Remover</button>
+				<a href="#/quartos/edit/{{ key }}" class="btn btn-success">Editar</a>
+			</td>
+
+		</tr>
+	</tbody>
+</table>

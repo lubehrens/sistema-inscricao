@@ -1,0 +1,17 @@
+<form ng-submit="ctrl.sendForm()" novalidate>
+	<div class="form-group">
+		<label for="nome">Hotel</label>
+		<input type="text" class="form-control" name="hotel_id" value="" id="hotel_id" ng-model="ctrl.quarto.hotel_id" required></input>
+	</div>
+
+	<div class="form-group">
+		<label for="responsavel">Nome</label>
+		<input type="text" class="form-control" name="nome" value="" id="nome" ng-model="ctrl.quarto.nome"></input>
+	</div>
+
+	<div class="form-group">
+		<label for="telefone">Total de vagas</label>
+		<input type="text" class="form-control" name="vagas_total" value="" id="vagas_total" ng-model="ctrl.quarto.vagas_total" required></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</form>
